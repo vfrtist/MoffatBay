@@ -1,3 +1,11 @@
+:root {
+    --accent1: #D36C4C;
+    --accent2: #E7AE71;
+    --accent3: #FBEF98;
+    --accent4: #065F7C;
+    --base: #F9F5F0;
+}
+
 @font-face {
     font-family: 'Alex Brush';
     font-style: normal;
@@ -18,4 +26,22 @@ h1 {
 h2 {
     font-family: "Cormorant Garamond", serif;
     font-weight: 300;
+}
+
+.logo {
+    path:nth-child(1) {
+        fill: var(--accent1);
+    }
+
+    path:nth-child(2) {
+        fill: var(--accent2);
+    }
+
+    path:nth-child(3) {
+        fill: var(--accent3);
+    }
+
+    path:nth-child(4) {
+        fill: var(--accent4);
+    }
 }
