@@ -1,0 +1,154 @@
+:root {
+  --accent1: #d36c4c;
+  --accent2: #e7ae71;
+  --accent3: #fbef98;
+  --accent4: #065f7c;
+  --base: #f9f5f0;
+
+  --font-light: #756c5c;
+  --font-dark: #252423;
+
+  --hover1: hsl(31, 85%, 75%);
+  --hover2: hsl(195, 80%, 35%);
+  --hover3: hsl(195, 80%, 35%);
+}
+
+@font-face {
+  font-family: "Alex Brush";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Alex Brush"),
+    url("fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-light);
+  transition: color 0.2s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16pt;
+  font-weight: 300;
+  background: var(--base);
+  margin: 0;
+  padding: 20px 3dvw;
+  box-sizing: border-box;
+  width: 100dvw;
+  color: var(--font-dark);
+}
+
+.logo {
+  path:nth-child(1) {
+    fill: var(--accent1);
+  }
+
+  path:nth-child(2) {
+    fill: var(--accent2);
+  }
+
+  path:nth-child(3) {
+    fill: var(--accent3);
+  }
+
+  path:nth-child(4) {
+    fill: var(--accent4);
+  }
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  border-bottom: 2px solid var(--accent1);
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  a {
+    height: inherit;
+  }
+
+  #user {
+    gap: 12px;
+
+    button {
+      border-radius: 18px;
+      padding: 8px;
+      text-align: center;
+      background: none;
+      border: none;
+      font-family: "Open Sans", sans-serif;
+      font-size: 12pt;
+      transition: background 0.2s, color 0.2s;
+      color: var(--font);
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    #login {
+      background: var(--accent2);
+      width: 86px;
+    }
+
+    #login:hover {
+      background: var(--hover1);
+    }
+
+    #join:hover {
+      color: var(--accent1);
+    }
+  }
+}
+
+#branding {
+  height: inherit;
+  margin-right: auto;
+
+  span {
+    font-family: "Alex Brush", serif;
+    font-size: 36pt;
+    color: var(--accent1);
+  }
+
+  .logo {
+    height: inherit;
+  }
+}
+
+nav {
+  padding: 8px;
+  color: var(--font-light);
+
+  a {
+    border-inline: 1px solid var(--accent1);
+    padding: 0px 32px;
+  }
+
+  a:first-of-type {
+    border-left: none;
+  }
+
+  a:last-of-type {
+    border-right: none;
+  }
+
+  a:hover {
+    color: var(--accent1);
+  }
+}
