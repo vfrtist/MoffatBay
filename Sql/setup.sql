@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS LodgeReservation;
 CREATE DATABASE LodgeReservation;
 USE LodgeReservation;
 -- User Table
@@ -36,8 +37,7 @@ CREATE TABLE Reservation (
     FOREIGN KEY (user) REFERENCES User(userID) ON DELETE CASCADE,
     FOREIGN KEY (roomNumber) REFERENCES Room(roomNumber) ON DELETE CASCADE
 );
---Insert statements
---Users
+
 INSERT INTO User(firstName, lastName, email, password)
 VALUES (
         "Alan",
@@ -57,7 +57,7 @@ VALUES (
         "northman@example.com",
         "$2y$10$Wig7qFFBfJl52QZX0DrYaef5SXUWgfy.wvvmsWDqV0.KQ1HNKpm8i"
     );
---Room Types
+
 INSERT INTO RoomType (
         typeName,
         description,
