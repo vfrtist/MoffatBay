@@ -1,5 +1,5 @@
 <header class="container horizontal">
-    <a href="home" target="_blank" rel="noopener noreferrer" id="branding" class="container horizontal">
+    <a href="./" target="_blank" id="branding" class="container horizontal">
         <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 234.747 231.296" xml:space="preserve">
             <path d="M74.762,106.255c0-23.534,19.078-42.611,42.611-42.611c23.534,0,42.612,19.077,42.612,42.611
@@ -26,13 +26,19 @@
     </a>
 
     <div id="user" class="container horizontal">
-        <a id="join" href="./register.php">Join</a>
-        <a id="login" href="./login.php">Log In</a>
+        <?php
+        if (isset($_SESSION["user_id"])) {
+            echo "<span>Hi ", $_SESSION["user_id"], "</span>";
+            echo "<button type='button'>Log Out</button>";
+        } else { ?>
+            <a id="join" href="register.php">Join</a>
+            <a id="login" href="login.php">Log In</a>
+        <?php } ?>
     </div>
 </header>
 <nav class="container horizontal">
-    <a href="./attractions.php" target="_blank" rel="noopener noreferrer">Attractions</a>
-    <a href="./about.php" target="_blank" rel="noopener noreferrer">About Us</a>
-    <a href="./my_reservation.php" target="_blank" rel="noopener noreferrer">Attractions</a>
-    <a href="./contact.php" target="_blank" rel="noopener noreferrer">Get in Touch</a>
+    <a href="./attractions.php" target="_blank">Attractions</a>
+    <a href="./about.php" target="_blank">About Us</a>
+    <a href="./my_reservation.php" target="_blank">Attractions</a>
+    <a href="./contact.php" target="_blank">Get in Touch</a>
 </nav>

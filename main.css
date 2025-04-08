@@ -12,7 +12,6 @@
 
   --hover1: hsl(31, 85%, 75%);
   --hover2: hsl(195, 80%, 35%);
-  --hover3: hsl(195, 80%, 35%);
 }
 
 @font-face {
@@ -29,8 +28,12 @@ a {
   transition: color 0.2s;
 }
 
+a:hover {
+  color: var(--accent1);
+}
+
 h2 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Open Sans", serif;
   font-weight: 300;
 }
 
@@ -54,7 +57,7 @@ body {
   font-weight: 300;
   background: var(--base);
   margin: 0;
-  padding: 20px 3dvw;
+  padding: 20px 3dvw 0px;
   box-sizing: border-box;
   color: var(--font-dark);
 }
@@ -231,6 +234,12 @@ main {
     padding: 12px 24px;
     border: none;
     font-family: "Open Sans", sans-serif;
+    transition: background .2s;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: var(--hover2);
   }
 }
 
@@ -253,5 +262,71 @@ figure {
     top: 20%;
     color: var(--card);
     padding: 45px 15%;
+  }
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100dvh - 80px);
+  padding: 0;
+
+  >div {
+    height: auto;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  #right {
+    place-self: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0 6dvw;
+    box-sizing: border-box;
+
+    form {
+      gap: 8px;
+      width: 100%;
+      align-items: flex-start;
+      font-family: "Open Sans", sans-serif;
+
+      input {
+        width: 100%;
+        background: none;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid var(--font-dark);
+        padding: 0;
+        font-size: 14pt;
+      }
+
+      label {
+        color: var(--accent4);
+        font-size: 11pt;
+        margin-top: 20px;
+      }
+
+      button {
+        background: var(--accent4);
+        color: var(--card);
+        border-radius: 18px;
+        padding: 8px;
+        border: none;
+        font-family: "Open Sans", sans-serif;
+        width: 100%;
+        transition: background .2s;
+        font-size: 14pt;
+        margin-top: 62px;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background: var(--hover2);
+      }
+    }
   }
 }
