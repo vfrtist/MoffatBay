@@ -1,5 +1,5 @@
 <header class="container horizontal">
-    <a href="./" target="_blank" id="branding" class="container horizontal">
+    <a href="./" id="branding" class="container horizontal">
         <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 234.747 231.296" xml:space="preserve">
             <path d="M74.762,106.255c0-23.534,19.078-42.611,42.611-42.611c23.534,0,42.612,19.077,42.612,42.611
