@@ -29,7 +29,7 @@
         <?php
         if (isset($_SESSION["user_id"])) {
             echo "<span>Hi ", $_SESSION["user_id"], "</span>";
-            echo "<button type='button'>Log Out</button>";
+            echo "<button id='login' type='button'>Log Out</button>";
         } else { ?>
             <a id="join" href="register.php">Join</a>
             <a id="login" href="login.php">Log In</a>

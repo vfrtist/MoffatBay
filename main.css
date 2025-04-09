@@ -90,7 +90,7 @@ header {
   #user {
     gap: 12px;
 
-    a {
+    :is(a, #login) {
       border-radius: 18px;
       padding: 8px;
       text-align: center;
@@ -99,7 +99,8 @@ header {
       font-family: "Open Sans", sans-serif;
       font-size: 12pt;
       transition: background 0.2s, color 0.2s;
-      color: var(--font);
+      color: var(--font-dark);
+      font-weight: 300;
     }
 
     a:hover {
