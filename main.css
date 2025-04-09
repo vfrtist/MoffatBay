@@ -90,7 +90,7 @@ header {
   #user {
     gap: 12px;
 
-    :is(a, #login) {
+    :is(a, #login, #logout) {
       border-radius: 18px;
       padding: 8px;
       text-align: center;
@@ -107,12 +107,12 @@ header {
       cursor: pointer;
     }
 
-    #login {
+    :is(#login, #logout) {
       background: var(--accent2);
       width: 86px;
     }
 
-    #login:hover {
+    :is(#logout, #login):hover {
       background: var(--hover1);
     }
 
