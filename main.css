@@ -32,9 +32,18 @@ a:hover {
   color: var(--accent1);
 }
 
+:is(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
 h2 {
   font-family: "Open Sans", serif;
   font-weight: 300;
+  margin: 0;
 }
 
 .container {
@@ -330,4 +339,63 @@ figure {
       }
     }
   }
+}
+
+.card {
+  height: 320px;
+  background: var(--card);
+  padding: 20px;
+  margin-block: 2dvh;
+  justify-content: space-between;
+
+  h2 {
+    text-align: left;
+    place-self: flex-start;
+  }
+
+  .subcard {
+    display: grid;
+    grid: 1fr 1fr / 2fr 2fr 1fr;
+    gap: 20px;
+    place-items: center;
+
+    img {
+      grid-row: span 2;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    span {
+      grid-column: span 2;
+    }
+
+    .tags {
+      grid-row: 2;
+      grid-column: 2;
+    }
+
+    .purchase {
+      gap: 36px;
+
+      button {
+        padding: 8px 20px;
+      }
+    }
+  }
+}
+
+.action1 {
+  background: var(--accent4);
+  color: var(--card);
+  border-radius: 18px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  transition: background .2s;
+}
+
+.action1:hover {
+  cursor: pointer;
+  background: var(--hover2);
 }
