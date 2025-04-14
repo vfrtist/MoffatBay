@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php require 'components/head.php' ?>
     <title>Welcome New User</title>
@@ -49,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<!-- Code used from the login page -->
+    <!-- Code used from the login page -->
     <?php require 'components/simpleheader.php' ?>
     <main id="grid">
         <div id="left">
@@ -78,13 +79,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </main>
 
-<?php
-// status code error messages
-if ($status == 1) echo "<p>Please fill out all fields.</p>";
-else if ($status == 2) echo "<p>Email already registered.</p>";
-else if ($status == 99) echo "<p>Registration successful! You can now <a href='login.php'>log in</a>.</p>";
-else if ($status == -1) echo "<p>Something went wrong. Try again.</p>";
-?>
+    <?php
+    // status code error messages
+    if ($status == 1)
+        echo "<p>Please fill out all fields.</p>";
+    else if ($status == 2)
+        echo "<p>Email already registered.</p>";
+    else if ($status == 99)
+        echo "<p>Registration successful! You can now <a href='login.php'>log in</a>.</p>";
+    else if ($status == -1)
+        echo "<p>Something went wrong. Try again.</p>";
+    ?>
 </body>
 
 </html>

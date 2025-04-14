@@ -6,12 +6,12 @@ session_start();
 <html lang="en">
 
 <head>
-  <?php require './components/head.php' ?>
+  <?php require 'components/head.php' ?>
   <title>Welcome to Moffat</title>
 </head>
 
 <body>
-  <?php require './components/fullheader.php' ?>
+  <?php require 'components/fullheader.php' ?>
   <main>
     <form action="" id="search" class="container horizontal">
       <fieldset class="container horizontal">
@@ -38,16 +38,23 @@ session_start();
         </svg>
         <div class="container vertical">
           <label for="guests">GUESTS</label>
-          <input type="number" name="guests" id="guests" value="2">
+          <div class="container horizontal" id="guestsWrapper">
+            <button type="button" id="down" class="counter">-</button>
+            <input type="text" name="guests" id="guests" value="2">
+            <button type="button" id="up" class="counter">+</butt>
+          </div>
         </div>
       </fieldset>
-      <button type="submit">Find My Room</button>
+      <button type="submit" class="cta1">Find My Room</button>
     </form>
     <figure class="container">
-      <img src=".\images\bart-ns4bIZ6XeGY-unsplash.jpg" alt=" A whale at sunset">
+      <img src="images/bart-ns4bIZ6XeGY-unsplash.jpg" alt=" A whale at sunset">
       <figcaption>Experience the wonder</figcaption>
     </figure>
   </main>
+
+  <script src="app.js"></script>
+
 </body>
 
 </html>

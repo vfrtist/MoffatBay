@@ -46,6 +46,12 @@ h2 {
   margin: 0;
 }
 
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -58,6 +64,21 @@ h2 {
 
 .vertical {
   flex-direction: column;
+}
+
+.cta1 {
+  background: var(--accent4);
+  color: var(--card);
+  border-radius: 18px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  transition: background .2s;
+}
+
+.cta1:hover {
+  cursor: pointer;
+  background: var(--hover2);
 }
 
 body {
@@ -237,19 +258,30 @@ main {
     width: 24px;
   }
 
-  button {
-    background: var(--accent4);
-    color: var(--card);
-    border-radius: 18px;
+  .cta1 {
     padding: 12px 24px;
-    border: none;
-    font-family: "Open Sans", sans-serif;
-    transition: background .2s;
+    width: auto;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
-  button:hover {
+  .counter {
+    font-size: 14pt;
     cursor: pointer;
-    background: var(--hover2);
+    padding: 6px;
+    transition: color .2s;
+  }
+
+  .counter:hover {
+    color: var(--accent1);
+  }
+
+  #guests {
+    width: 2ch;
+  }
+
+  #guestsWrapper {
+    align-items: center;
   }
 }
 
@@ -383,19 +415,4 @@ figure {
       }
     }
   }
-}
-
-.action1 {
-  background: var(--accent4);
-  color: var(--card);
-  border-radius: 18px;
-  border: none;
-  font-family: "Open Sans", sans-serif;
-  width: 100%;
-  transition: background .2s;
-}
-
-.action1:hover {
-  cursor: pointer;
-  background: var(--hover2);
 }
