@@ -374,11 +374,11 @@ figure {
 }
 
 .card {
-  height: 320px;
   background: var(--card);
   padding: 20px;
   margin-block: 2dvh;
   justify-content: space-between;
+  gap: 20px;
 
   h2 {
     text-align: left;
