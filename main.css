@@ -12,6 +12,8 @@
 
   --hover1: hsl(31, 85%, 75%);
   --hover2: hsl(195, 80%, 35%);
+
+  --disabled: #b7bbc8;
 }
 
 @font-face {
@@ -274,6 +276,10 @@ main {
 
   .counter:hover {
     color: var(--accent1);
+  }
+
+  .counter:disabled {
+    color: var(--disabled);
   }
 
   #guests {
