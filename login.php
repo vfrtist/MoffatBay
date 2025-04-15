@@ -65,9 +65,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form id="loginForm" action="login.php" method="post" class="container vertical">
           <label for="email">EMAIL</label>
           <input type="text" name="email" id="email" />
+
           <label for="password">PASSWORD</label>
           <input type="password" name="password" id="password" />
-          <button type="submit">Log In</button>
+
+          <button type="submit" class="cta1">Log In</button>
         </form>
         <a href="register.php">New? Register here</a>
       <?php } else { ?>

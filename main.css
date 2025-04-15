@@ -352,22 +352,10 @@ figure {
         margin-top: 20px;
       }
 
-      button {
-        background: var(--accent4);
-        color: var(--card);
-        border-radius: 18px;
+      .cta1 {
         padding: 8px;
-        border: none;
-        font-family: "Open Sans", sans-serif;
-        width: 100%;
-        transition: background .2s;
         font-size: 14pt;
         margin-top: 62px;
-      }
-
-      button:hover {
-        cursor: pointer;
-        background: var(--hover2);
       }
     }
   }
