@@ -1,16 +1,24 @@
 <div class="card container vertical">
-    <h2>King Room</h2>
+    <h2><?php echo $row['typeName'] ?></h2>
     <div class="subcard">
-        <img src="images/Deluxe King.jpg" alt="A really nice hotel bedroom">
-        <span class="desciption">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt vitae cum,
-            dolores ad explicabo, eum enim ab eaque beatae quidem dolor iure est fugiat magni expedita, quaerat
-            soluta consequatur officiis.</span>
-        <ul class="tags">
-            <li>Spacious</li>
-            <li>King Bed</li>
+        <div class="imgWrapper">
+            <img src="<?php
+            require 'config/roomimages.php';
+            echo $roomImages[$row['typeName']];
+            ?>" alt="A really nice hotel bedroom">
+        </div>
+        <span class="desciption">
+            <?php echo $row['description'] ?>
+        </span>
+        <ul class="tags container horizontal">
+            <?php
+            foreach (explode(",", $row['amenities']) as $item) {
+                ?>
+                <li><?php echo trim($item) ?></li>
+            <?php } ?>
         </ul>
         <div class="container vertical purchase">
-            <h4 class="price">$135/night</h4>
+            <h4 class="price">$<?php echo $row['dailyRate'] ?>/night</h4>
             <button type="button" class="cta1">Book this room</button>
         </div>
     </div>

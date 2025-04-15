@@ -4,6 +4,9 @@ $user = 'root';
 $pass = 'root';
 $db = 'lodgereservation';
 
-// Todo
-// Roll out a generic connection for use in other functions
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 ?>
