@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $ha = $row[0];
       if (password_verify($_POST["password"], $ha)) {
         $_SESSION["user_id"] = $_POST["email"];
-        $_SESSION["user_id"] = $row[1];
+        $_SESSION["user_name"] = $row[1];
         $status = 99;
       } else {
         $status = 3;
