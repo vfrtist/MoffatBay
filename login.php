@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <head>
   <?php require 'components/head.php' ?>
+  <link rel="stylesheet" href="user.css" />
   <title>Log In</title>
   <?php if ($status == 99) { ?>
     <meta http-equiv="refresh" content="5; url=index.php" />
