@@ -30,7 +30,7 @@
         if (isset($_SESSION["user_id"])) {
             echo "<span>Hi ", $_SESSION["user_id"], "</span>";
             ?>
-            <form action='logout.php'>
+            <form action='functions/logout.php'>
                 <button id='logout' type='submit'>Log Out</button>
             </form>
             <?php
