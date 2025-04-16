@@ -1,5 +1,9 @@
 <?php
-$stmt = $conn->prepare('SELECT * FROM RoomType');
-$stmt->execute();
-$results = $stmt->get_result();
+
+function find_rooms()
+{
+    require_once 'config/db.php';
+    $db = new Database();
+    return $db->query('SELECT * FROM RoomType');
+}
 ?>

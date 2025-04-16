@@ -15,17 +15,18 @@ session_start();
     ?>
     <main>
         <?php
-        require 'config/db.php';
         require 'functions/findrooms.php';
-        if ($results->num_rows > 0) {
-            // output data of each row
-            while ($row = $results->fetch_assoc()) {
-                include 'components/card.php';
-            }
-        } else {
-            echo "0 results";
+        foreach (find_rooms() as $room) {
+            include 'components/card.php';
         }
-        $conn->close();
+        // if ($results->num_rows > 0) {
+        //     // output data of each row
+        //     while ($row = $results->fetch_assoc()) {
+        //         include 'components/card.php';
+        //     }
+        // } else {
+        //     echo "0 results";
+        // }
         ?>
     </main>
 </body>
