@@ -277,16 +277,21 @@ main {
   .counter {
     font-size: 14pt;
     cursor: pointer;
-    padding: 6px;
-    transition: color .2s;
+    transition: color .2s, border .2s;
+    border: 1pt solid var(--disabled);
+    aspect-ratio: 1 / 1;
+    width: 32px;
+    border-radius: 50%;
   }
 
   .counter:hover {
-    color: var(--accent1);
+    border: 1pt solid var(--accent1);
   }
 
   .counter:disabled {
     color: var(--disabled);
+    border: none;
+    cursor: not-allowed;
   }
 
   #guests {
@@ -406,7 +411,6 @@ figure {
     }
 
     img {
-      /* grid-row: span 2; */
       object-fit: cover;
       height: 100%;
       width: 100%;
@@ -438,6 +442,65 @@ figure {
       button {
         padding: 8px 20px;
       }
+    }
+  }
+}
+
+.cardB {
+  background: var(--card);
+  margin-block: 4dvh;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 400px;
+
+  .imgWrapper {
+    flex: 2;
+    height: 100%;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .info {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    flex: 3;
+    gap: 4px;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .tags {
+      font-size: 10pt;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 8px;
+
+      li {
+        padding: 2px 8px;
+        border: 1px solid var(--font-light);
+        border-radius: 20px;
+        cursor: default;
+      }
+    }
+
+    .purchase {
+      gap: 16px;
+
+      button {
+        padding: 8px 20px;
+      }
+    }
+
+    >.container {
+      justify-content: space-between;
+      width: 100%;
     }
   }
 }

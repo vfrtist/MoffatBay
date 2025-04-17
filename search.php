@@ -11,10 +11,10 @@
 <body>
     <?php
     require 'components/simpleheader.php';
+    require 'components/searchbar.php';
     ?>
     <main>
         <?php
-        require 'components/searchbar.php';
         require 'functions/findrooms.php';
         find_rooms();
         foreach ($_SESSION['available_rooms'] as $room) {
