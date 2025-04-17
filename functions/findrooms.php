@@ -28,9 +28,7 @@ function find_rooms()
                 )
             )
         )';
-    // TODO sanitize dates in the event that they HAVEN'T been set by the form correctly.
-    // Requires default values I think.
-    $result = $db->query($query, 'ss', [$_GET['arrival'], $_GET['departure']]);
+    $result = $db->query($query, 'ss', [$_GET['checkin'], $_GET['checkout']]);
     $_SESSION['available_rooms'] = [];
     foreach ($result as $r) {
         $_SESSION['available_rooms'][$r['typeName']] = [

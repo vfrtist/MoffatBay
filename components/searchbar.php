@@ -1,6 +1,6 @@
 <?php
-$arrival = htmlspecialchars($_GET['arrival'] ?? '');
-$departure = htmlspecialchars($_GET['departure'] ?? '');
+$checkin = htmlspecialchars($_GET['checkin'] ?? '');
+$checkout = htmlspecialchars($_GET['checkout'] ?? '');
 $guests = htmlspecialchars($_GET['guests'] ?? '');
 ?>
 
@@ -13,18 +13,18 @@ $guests = htmlspecialchars($_GET['guests'] ?? '');
     </svg>
 
     <div class="container vertical">
-      <label for="arrival">CHECK IN</label>
-      <input type="date" name="arrival" id="arrival" value="<?php if ($arrival) {
-        echo $arrival;
+      <label for="checkin">CHECK IN</label>
+      <input type="date" name="checkin" id="checkin" value="<?php if ($checkin) {
+        echo $checkin;
       } else {
         echo date('Y-m-d', strtotime('+1 day'));
       } ?>">
     </div>
 
     <div class="container vertical">
-      <label for="departure">CHECK OUT</label>
-      <input type="date" name="departure" id="departure" value="<?php if ($departure) {
-        echo $departure;
+      <label for="checkout">CHECK OUT</label>
+      <input type="date" name="checkout" id="checkout" value="<?php if ($checkout) {
+        echo $checkout;
       } else {
         echo date('Y-m-d', strtotime('+2 day'));
       } ?>">
