@@ -19,7 +19,10 @@
         </ul>
         <div class="container vertical purchase">
             <h4 class="price">$<?php echo $room['dailyRate'] ?>/night</h4>
-            <button type="button" class="cta1">Book this room</button>
+            <form action="confirm_test.php">
+                <input type="hidden" name="typeName" value="<?php echo htmlspecialchars($room['typeName']); ?>">
+                <button type="submit" class="cta1">Book this room</button>
+            </form>
         </div>
     </div>
 </div>

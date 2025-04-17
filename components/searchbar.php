@@ -1,7 +1,7 @@
 <?php
-$arrival = $_GET['arrival'] ?? '';
-$departure = $_GET['departure'] ?? '';
-$guests = $_GET['guests'] ?? '';
+$arrival = htmlspecialchars($_GET['arrival'] ?? '');
+$departure = htmlspecialchars($_GET['departure'] ?? '');
+$guests = htmlspecialchars($_GET['guests'] ?? '');
 ?>
 
 <form action="search.php" id="search" class="container horizontal">
@@ -14,16 +14,20 @@ $guests = $_GET['guests'] ?? '';
 
     <div class="container vertical">
       <label for="arrival">CHECK IN</label>
-      <input type="date" name="arrival" id="arrival" <?php if ($arrival) {
-        echo "value='$arrival'";
-      } ?>>
+      <input type="date" name="arrival" id="arrival" value="<?php if ($arrival) {
+        echo $arrival;
+      } else {
+        echo date('Y-m-d', strtotime('+1 day'));
+      } ?>">
     </div>
 
     <div class="container vertical">
       <label for="departure">CHECK OUT</label>
-      <input type="date" name="departure" id="departure" <?php if ($departure) {
-        echo "value='$departure'";
-      } ?>>
+      <input type="date" name="departure" id="departure" value="<?php if ($departure) {
+        echo $departure;
+      } else {
+        echo date('Y-m-d', strtotime('+2 day'));
+      } ?>">
     </div>
   </fieldset>
   <fieldset class="container horizontal">

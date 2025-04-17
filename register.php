@@ -1,4 +1,5 @@
 <?php
+session_start();
 $status = 0;
 
 // if the server method equals the post method, perform the following

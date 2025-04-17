@@ -1,6 +1,5 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +16,8 @@ session_start();
         <?php
         require 'components/searchbar.php';
         require 'functions/findrooms.php';
-        foreach (find_rooms() as $room) {
+        find_rooms();
+        foreach ($_SESSION['available_rooms'] as $room) {
             include 'components/card.php';
         }
         ?>
