@@ -1,4 +1,4 @@
-<div class="card container vertical">
+<div class="card container horizontal">
     <div class="imgWrapper">
         <img src="<?php
         require 'config/roomimages.php';
