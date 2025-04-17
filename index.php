@@ -10,8 +10,8 @@
 
 <body>
   <?php require 'components/fullheader.php' ?>
+  <?php require 'components/searchbar.php' ?>
   <main>
-    <?php require 'components/searchbar.php' ?>
     <figure class="container">
       <img src="images/bart-ns4bIZ6XeGY-unsplash.jpg" alt=" A whale at sunset">
       <figcaption>Experience the wonder</figcaption>

@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    require 'components/simpleheader.php';
+    require 'components/fullheader.php';
     require 'components/searchbar.php';
     ?>
     <main>
