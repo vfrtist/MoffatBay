@@ -22,6 +22,7 @@
             <form class="roomForm" action="confirm_test.php">
                 <input type="hidden" name="checkin">
                 <input type="hidden" name="checkout">
+                <input type="hidden" name="guests">
                 <input type="hidden" name="typeName" value="<?php echo htmlspecialchars($room['typeName']); ?>">
                 <button type="submit" class="cta1">Book this room</button>
             </form>
