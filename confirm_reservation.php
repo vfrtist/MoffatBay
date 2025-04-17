@@ -45,7 +45,7 @@
     }else{
      http_response_code(400);
      //echo $_POST["room_number"];
-     exit();//Can probanly handle this more elegantly later
+     exit();//Can probably handle this more elegantly later
     }
     $_SESSION["total"]=$dailyRate*$numnights;
   }
@@ -53,7 +53,7 @@
   <link rel="stylesheet" href="user.css" />
   <title>Confirm your Reservation</title>
   <style>
-   #left table tr td:first{text-align:right;margin-right:1em}
+   #left table tr td:first-child{text-align:right;margin-right:1em}
   </style>
 </head>
 
