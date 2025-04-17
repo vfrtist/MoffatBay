@@ -14,6 +14,7 @@
   --hover2: hsl(195, 80%, 35%);
 
   --disabled: #b7bbc8;
+  --card-shadow: #3f3e3d1a;
 }
 
 @font-face {
@@ -209,8 +210,10 @@ main {
   width: 100%;
   background: var(--card);
   font-family: "Open Sans", sans-serif;
-  padding: 20px 40px;
+  padding: 16px 8dvw;
   justify-content: space-between;
+  position: sticky;
+  top: 60px;
 
   fieldset {
     border: none;
@@ -233,6 +236,7 @@ main {
   label {
     color: var(--accent4);
     font-size: 11pt;
+    margin-bottom: 8px;
   }
 
   input {
@@ -280,7 +284,7 @@ main {
     transition: color .2s, border .2s;
     border: 1pt solid var(--disabled);
     aspect-ratio: 1 / 1;
-    width: 32px;
+    width: 28px;
     border-radius: 50%;
   }
 
@@ -289,14 +293,15 @@ main {
   }
 
   .counter:disabled {
+    border: 1pt solid var(--disabled);
     color: var(--disabled);
-    border: none;
     cursor: not-allowed;
   }
 
   #guests {
-    width: 2ch;
-    box-sizing: content-box;
+    width: 3ch;
+    margin-inline: 8px;
+    padding: 0;
   }
 
   #guestsWrapper {
@@ -381,79 +386,16 @@ figure {
 
 .card {
   background: var(--card);
-  padding: 20px;
   margin-block: 4dvh;
   justify-content: space-between;
-  gap: 20px;
-  border-radius: 12px;
-
-  h2 {
-    text-align: left;
-    place-self: flex-start;
-  }
-
-  .subcard {
-    display: grid;
-    grid: 3fr 2fr / 2fr 2fr 1fr;
-    gap: 20px;
-    place-items: center;
-    height: 100%;
-    width: 100%;
-    min-width: 0;
-    min-height: 0;
-
-    .imgWrapper {
-      grid-row: span 2;
-      height: 100%;
-      width: 100%;
-      min-width: 0;
-      min-height: 0;
-    }
-
-    img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-    }
-
-    span {
-      grid-column: span 2;
-    }
-
-    .tags {
-      grid-row: 2;
-      grid-column: 2;
-      font-size: 10pt;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 8px;
-
-      li {
-        padding: 2px 8px;
-        border: 1px solid var(--font-light);
-        border-radius: 20px;
-        cursor: default;
-      }
-    }
-
-    .purchase {
-      gap: 36px;
-
-      button {
-        padding: 8px 20px;
-      }
-    }
-  }
-}
-
-.cardB {
-  background: var(--card);
-  margin-block: 4dvh;
-  justify-content: space-between;
-  gap: 20px;
-  border-radius: 12px;
+  border-radius: 34px;
   overflow: hidden;
   height: 400px;
+  box-shadow: 2px 9px 20px 2px var(--card-shadow);
+
+  h2 {
+    font-weight: 500;
+  }
 
   .imgWrapper {
     flex: 2;
@@ -492,9 +434,15 @@ figure {
 
     .purchase {
       gap: 16px;
+      width: 30%;
+
+      form {
+        width: 100%;
+      }
 
       button {
         padding: 8px 20px;
+        width: 100%;
       }
     }
 
