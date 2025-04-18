@@ -13,7 +13,10 @@
   ?>
   <?php if((!isset($_POST["action"])) || ($_POST["action"]!="confirm")){
    $fn = "";
-   $_POST["check_in"]="2025-06-18 17:30";$_POST["check_out"]="2025-06-20 08:00";$_POST["room_number"]=101;$_POST["number_guests"]=4;//Dummy values for testing, comment out this line when not in use
+
+   //vv Dummy values for testing, comment out this line when not in use vv
+   //$_POST["check_in"]="2025-06-18 17:30";$_POST["check_out"]="2025-06-20 08:00";$_POST["room_number"]=101;$_POST["number_guests"]=4;
+
    if(isset($_SESSION["user_name"])){
      $fn=$_SESSION["user_name"];
    }else{
