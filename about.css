@@ -26,6 +26,8 @@ main .container {
     text-align: justify;
   }
 
+
+  /* Media query for smaller screens */
   @media (max-width: 768px) {
     main .container {
       padding: 24px;
@@ -39,4 +41,4 @@ main .container {
     main .container p {
       font-size: 13pt;
     }
-  }sw
+  }
