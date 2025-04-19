@@ -7,7 +7,7 @@ $status = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($_POST["email"]) {
     $conn = new mysqli("localhost", "root", "root", "lodgereservation");
-    $stmt = $conn->prepare('SELECT password, firstName FROM user WHERE email=?');
+    $stmt = $conn->prepare('SELECT password, firstName, userID FROM user WHERE email=?');
     $stmt->bind_param("s", $_POST["email"]);
     $stmt->execute();
     $res = $stmt->get_result();
@@ -20,8 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $row = $res->fetch_array();
       $ha = $row[0];
       if (password_verify($_POST["password"], $ha)) {
-        $_SESSION["user_id"] = $_POST["email"];
+        $_SESSION["user_email"] = $_POST["email"];
         $_SESSION["user_name"] = $row[1];
+        $_SESSION["user_id"] = $row[2];
         $status = 99;
       } else {
         $status = 3;
@@ -35,8 +36,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <?php require 'components/head.php' ?>
   <link rel="stylesheet" href="user.css" />
   <title>Log In</title>
-  <?php if ($status == 99) { ?>
-    <meta http-equiv="refresh" content="5; url=index.php" />
+  <?php
+  if ($status == 99) {
+    // Check to see if this came from an outside location.
+    // If so go back to where you came from.
+    $location = 'index.php';
+    if (isset($_SESSION['redirect'])) {
+      $location = $_SESSION['redirect'];
+      unset($_SESSION['redirect']);
+    }
+    ?>
+    <meta http-equiv="refresh" content="5; url=<?php echo $location ?>" />
   <?php } ?>
 </head>
 

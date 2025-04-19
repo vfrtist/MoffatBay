@@ -4,13 +4,6 @@ function find_rooms()
 {
     require_once 'config/db.php';
     $db = new Database();
-    /* 
-    General events: 
-        Get rooms based on date. (haven't solved yet for now pull all room types)
-        Put those rooms into an array as a session variable by
-        [typeName => [roomNumber, description, amenities, maxOccupancy, dailyRate ]]
-        Second step is to read all rooms in $_SESSION['Available Rooms']
-    */
     $query = '
     SELECT r.roomNumber, rt.typeID, rt.typeName, rt.description, rt.amenities, rt.maxOccupancy, rt.dailyRate
     FROM Room r
@@ -28,7 +21,9 @@ function find_rooms()
                 )
             )
         )';
-    $result = $db->query($query, 'ss', [$_GET['checkin'], $_GET['checkout']]);
+    $types = 'ss';
+    $params = [$_GET['checkin'], $_GET['checkout']];
+    $result = $db->query($query, $types, $params);
     $_SESSION['available_rooms'] = [];
     foreach ($result as $r) {
         $_SESSION['available_rooms'][$r['typeName']] = [

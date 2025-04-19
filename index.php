@@ -18,7 +18,7 @@
     </figure>
   </main>
 
-  <script src="app.js"></script>
+  <script src="search.js?v=<?php echo time(); ?>"></script>
 
 </body>
 

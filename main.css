@@ -127,7 +127,7 @@ header {
   inset: 0;
   background-color: var(--base);
   padding-inline: 8dvw;
-  z-index: 2;
+  z-index: 1;
 
   #user {
     gap: 12px;
@@ -213,8 +213,8 @@ main {
   padding: 16px 8dvw;
   justify-content: space-between;
   position: sticky;
-  top: 60px;
-  z-index: 1;
+  top: 0;
+  z-index: 2;
 
   fieldset {
     border: none;

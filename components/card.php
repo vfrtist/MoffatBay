@@ -7,8 +7,11 @@
     </div>
     <div class="info container vertical">
         <h2><?php echo $room['typeName'] ?></h2>
-        <div class="desciption">
+        <div class="description">
             <?php echo $room['description'] ?>
+        </div>
+        <div class="size">
+            Max: <?php echo $room['maxOccupancy'] ?> guests
         </div>
         <div class="container horizontal">
             <ul class="tags container horizontal">
@@ -20,7 +23,7 @@
             </ul>
             <div class="container vertical purchase">
                 <h4 class="price">$<?php echo $room['dailyRate'] ?>/night</h4>
-                <form class="roomForm" action="confirm_test.php">
+                <form class="roomForm" method="post" action="confirm.php">
                     <input type="hidden" name="checkin">
                     <input type="hidden" name="checkout">
                     <input type="hidden" name="guests">

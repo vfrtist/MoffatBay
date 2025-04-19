@@ -22,7 +22,9 @@
         }
         ?>
     </main>
-    <script src="search.js"></script>
+
+    <script src="search.js?v=<?php echo time(); ?>"></script>
+
 </body>
 
 </html>
