@@ -16,7 +16,14 @@
     <main>
         <?php
         require 'functions/findrooms.php';
-        find_rooms();
+        // if someone got here via searching enter dates.
+        if (isset($_GET['checkin']) && isset($_GET['checkout'])) {
+            find_rooms($_GET['checkin'], $_GET['checkout']);
+        } else {
+            $in = date('Y-m-d', strtotime('+1 day'));
+            $out = date('Y-m-d', strtotime('+2 day'));
+            find_rooms($in, $out);
+        }
         foreach ($_SESSION['available_rooms'] as $room) {
             include 'components/card.php';
         }

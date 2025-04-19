@@ -1,6 +1,6 @@
 <?php
 
-function find_rooms()
+function find_rooms($in, $out)
 {
     require_once 'config/db.php';
     $db = new Database();
@@ -22,7 +22,7 @@ function find_rooms()
             )
         )';
     $types = 'ss';
-    $params = [$_GET['checkin'], $_GET['checkout']];
+    $params = [$in, $out];
     $result = $db->query($query, $types, $params);
     $_SESSION['available_rooms'] = [];
     foreach ($result as $r) {
