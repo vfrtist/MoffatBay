@@ -16,7 +16,9 @@
         <div class="container horizontal">
             <ul class="tags container horizontal">
                 <?php
-                foreach (explode(",", $room['amenities']) as $item) {
+                // limiting the number of tags. There are too many.
+                $tags = array_slice(explode(",", $room['amenities']), 5);
+                foreach ($tags as $item) {
                     ?>
                     <li><?php echo trim($item) ?></li>
                 <?php } ?>

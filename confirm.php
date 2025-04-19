@@ -37,7 +37,13 @@ if (!isset($_SESSION["user_id"])) {
     <?php require 'components/simpleheader.php'; ?>
 
     <main id="grid">
-        <div class="left container vertical">
+        <div id="left" class="left">
+            <img src="<?php
+            require 'config/roomimages.php';
+            echo $roomImages[$_SESSION['room_choice']['typeName']];
+            ?>" alt="A really nice hotel bedroom">
+        </div>
+        <div id="right" class="container vertical">
             <?php if (isset($_SESSION['reservation'])) {
                 if ($_SESSION['reservation'] == 'cancelled') { ?>
                     <h2>Reservation cancelled</h2>
@@ -47,7 +53,7 @@ if (!isset($_SESSION["user_id"])) {
             } else { ?>
                 <h2>Confirm your Reservation</h2>
             <?php } ?>
-            <div>
+            <div class="container vertical">
                 <div>Number of Guests: <span><?php echo $_SESSION['room_choice']['guests']; ?></span></div>
                 <div>First Name: <span><?php echo $_SESSION['user_name']; ?></span></div>
                 <div>Check In: <span><?php echo $_SESSION['room_choice']['in']; ?></span></div>
@@ -55,22 +61,17 @@ if (!isset($_SESSION["user_id"])) {
                 <div>Daily Rate: <span><?php echo $_SESSION['room_choice']['dailyRate']; ?></span></div>
                 <div>Total Price: <span><?php echo $_SESSION['room_choice']['total']; ?></span></div>
             </div>
+            <?php if (!isset($_SESSION['reservation'])) { ?>
+                <form id="reservation" method="POST" class="container vertical" action="functions/postreservation.php">
+                    <button type="submit" class="cta1" name="action" value="confirm">Confirm</button>
+                    <button type="submit" class="cta2" name="action" value="cancel">Cancel</button>
+                </form>
+            <?php } else {
+                // A reservation has been detected
+                unset($_SESSION['reservation']);
+            } ?>
         </div>
-        <div class="right">
-            <img src="<?php
-            require 'config/roomimages.php';
-            echo $roomImages[$_SESSION['room_choice']['typeName']];
-            ?>" alt="A really nice hotel bedroom">
-        </div>
+
         <!-- if a reservation has not been decided -->
-        <?php if (!isset($_SESSION['reservation'])) { ?>
-            <form id="reservation" method="POST" class="container horizontal" action="functions/postreservation.php">
-                <button type="submit" class="cta2" name="action" value="cancel">Cancel Your Reservation</button>
-                <button type="submit" class="cta1" name="action" value="confirm">Confirm Your Reservation</button>
-            </form>
-        <?php } else {
-            // A reservation has been detected
-            unset($_SESSION['reservation']);
-        } ?>
     </main>
 </body>

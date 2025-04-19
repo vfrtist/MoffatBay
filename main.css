@@ -3,6 +3,7 @@
   --accent2: #e7ae71;
   --accent3: #fbef98;
   --accent4: #065f7c;
+  --accent5: #c0d9e1;
   --base: #f9f5f0;
   --card: white;
 
@@ -12,6 +13,7 @@
 
   --hover1: hsl(31, 85%, 75%);
   --hover2: hsl(195, 80%, 35%);
+  --hover3: hsl(195, 79%, 81%);
 
   --disabled: #b7bbc8;
   --card-shadow: #3f3e3d1a;
@@ -75,9 +77,7 @@ button {
   flex-direction: column;
 }
 
-.cta1 {
-  background: var(--accent4);
-  color: var(--card);
+:is(.cta1, .cta2) {
   border-radius: 18px;
   border: none;
   font-family: "Open Sans", sans-serif;
@@ -85,9 +85,23 @@ button {
   transition: background .2s;
 }
 
+.cta1 {
+  background: var(--accent4);
+  color: var(--card);
+}
+
 .cta1:hover {
   cursor: pointer;
   background: var(--hover2);
+}
+
+.cta2 {
+  background: var(--accent5);
+}
+
+.cta2:hover {
+  cursor: pointer;
+  background: var(--hover3);
 }
 
 body {
@@ -185,7 +199,7 @@ nav {
 
   a {
     border-inline: 1px solid var(--accent1);
-    padding: 0px 32px;
+    padding: 0px 3%;
   }
 
   a:first-of-type {
@@ -354,7 +368,7 @@ figure {
     width: 100%;
     padding: 0 6dvw;
 
-    form {
+    :is(form, .display) {
       gap: 8px;
       width: 100%;
       align-items: flex-start;
@@ -376,9 +390,12 @@ figure {
         margin-top: 20px;
       }
 
-      .cta1 {
+      :is(.cta1, .cta2) {
         padding: 8px;
         font-size: 14pt;
+      }
+
+      .cta1 {
         margin-top: 62px;
       }
     }
@@ -422,7 +439,7 @@ figure {
     .tags {
       font-size: 10pt;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: flex-start !important;
       gap: 8px;
 
       li {
@@ -431,6 +448,10 @@ figure {
         border-radius: 20px;
         cursor: default;
       }
+    }
+
+    >.container {
+      gap: 8px;
     }
 
     .purchase {
@@ -452,4 +473,10 @@ figure {
       width: 100%;
     }
   }
+}
+
+#reservation {
+  width: 100%;
+  display: flex;
+  gap: 16px !important;
 }
