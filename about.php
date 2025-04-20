@@ -10,7 +10,7 @@
 
 <body>
   <?php require 'components/fullheader.php'; ?>
-  <?php require 'components/searchbar.php'; ?>
+  
   <main>
     <div class="container">
       <h1>About Us</h1>

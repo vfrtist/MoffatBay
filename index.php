@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<?php include 'header.php'; ?>
   <?php require 'components/fullheader.php' ?>
   <?php require 'components/searchbar.php' ?>
   <main>
