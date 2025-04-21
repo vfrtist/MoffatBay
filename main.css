@@ -140,7 +140,7 @@ header {
   position: sticky;
   inset: 0;
   background-color: var(--base);
-  padding-inline: 8dvw;
+  padding-inline: 12dvw;
   z-index: 1;
 
   #user {
@@ -217,14 +217,14 @@ nav {
 
 main {
   width: 100%;
-  padding: 20px 8dvw;
+  padding: 20px 12dvw;
 }
 
 #search {
   width: 100%;
   background: var(--card);
   font-family: "Open Sans", sans-serif;
-  padding: 16px 8dvw;
+  padding: 16px 12dvw;
   justify-content: space-between;
   position: sticky;
   top: 0;
