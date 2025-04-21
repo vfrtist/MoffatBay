@@ -27,8 +27,9 @@
         if (count($_SESSION['available_rooms']) == 0) { ?>
             <div>No available rooms under those terms. Please search again.</div>
         <?php } else {
+            require 'components/cardAsFunction.php';
             foreach ($_SESSION['available_rooms'] as $room) {
-                include 'components/card.php';
+                echo getRoomCard($room);
             }
         }
         ?>
