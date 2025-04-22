@@ -10,6 +10,27 @@
   --font-light: #756c5c;
   --font-dark: #252423;
   --transparent: #25242346;
+  --font-cta: white;
+  --font-accent: var(--accent4);
+
+  --hover1: hsl(31, 85%, 75%);
+  --hover2: hsl(195, 80%, 35%);
+  --hover3: hsl(195, 79%, 81%);
+
+  --disabled: #b7bbc8;
+  --card-shadow: #3f3e3d1a;
+}
+
+[data-theme="dark"] {
+  --base: #212427;
+  --card: #2c3035;
+
+  --font-light: #ebe3d7;
+  --font-dark: #fcf9f6;
+  --transparent: #25242346;
+  --font-cta: white;
+  --font-accent: var(--font-light);
+
 
   --hover1: hsl(31, 85%, 75%);
   --hover2: hsl(195, 80%, 35%);
@@ -87,7 +108,7 @@ button {
 
 .cta1 {
   background: var(--accent4);
-  color: var(--card);
+  color: var(--font-cta);
 }
 
 .cta1:hover {
@@ -249,7 +270,7 @@ main {
   }
 
   label {
-    color: var(--accent4);
+    color: var(--font-accent);
     font-size: 11pt;
     margin-bottom: 8px;
   }
@@ -479,4 +500,27 @@ figure {
   width: 100%;
   display: flex;
   gap: 16px !important;
+}
+
+
+[data-theme="dark"] {
+  header {
+    border-color: var(--accent2);
+  }
+
+  #branding span {
+    color: var(--accent2) !important;
+  }
+
+  .icon {
+    fill: var(--font-cta) !important;
+  }
+
+  nav a {
+    border-color: var(--accent2);
+  }
+
+  #login {
+    color: var(--base) !important;
+  }
 }
