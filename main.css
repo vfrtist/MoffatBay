@@ -245,7 +245,7 @@ main {
   width: 100%;
   background: var(--card);
   font-family: "Open Sans", sans-serif;
-  padding: 16px 12dvw;
+  padding: 12px 12dvw;
   justify-content: space-between;
   position: sticky;
   top: 0;
@@ -273,6 +273,7 @@ main {
     color: var(--font-accent);
     font-size: 11pt;
     margin-bottom: 8px;
+    font-weight: 500;
   }
 
   input {
@@ -280,12 +281,13 @@ main {
     background: none;
     font-size: 16pt;
     font-family: "Open Sans", sans-serif;
-    width: 11ch;
+    width: 12ch;
     color: var(--font-dark);
     padding: 4px 8px;
     border-radius: 8px;
     position: relative;
     text-align: center;
+    font-weight: 100;
   }
 
   input[type="date"]::-webkit-calendar-picker-indicator {
@@ -315,12 +317,12 @@ main {
   }
 
   .counter {
-    font-size: 14pt;
+    font-size: 12pt;
     cursor: pointer;
     transition: color .2s, border .2s;
     border: 1pt solid var(--disabled);
     aspect-ratio: 1 / 1;
-    width: 28px;
+    width: 24px;
     border-radius: 50%;
   }
 
@@ -335,7 +337,7 @@ main {
   }
 
   #guests {
-    width: 3ch;
+    width: 2ch;
     margin-inline: 8px;
     padding: 0;
   }
@@ -522,5 +524,28 @@ figure {
 
   #login {
     color: var(--base) !important;
+  }
+}
+
+.card2 {
+  .info {
+    padding: 16px;
+  }
+
+  .imgWrapper {
+    position: relative;
+    flex: 2;
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 0;
+    padding: 52px 24px 16px;
+    font-weight: 600;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(63, 62, 61, .35) 0%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(1px);
+    mask: linear-gradient(0deg, black 45%, transparent 100%);
+    color: var(--font-cta);
   }
 }
