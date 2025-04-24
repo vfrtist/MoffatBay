@@ -22,4 +22,3 @@ if ($_POST['action'] == 'confirm') {
     $_SESSION['reservation'] = 'cancelled';
 }
 header('Location: ../confirm.php');
-?>

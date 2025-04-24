@@ -6,5 +6,4 @@ $roomImages = [
     "Lagoon King" => "images/Lagoon King.jpg",
     "Luxury Queen" => "images/Luxury Queen.jpg",
     "Luxury King" => "images/Luxury King.jpg"
-]
-    ?>
+];

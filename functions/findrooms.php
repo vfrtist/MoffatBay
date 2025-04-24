@@ -38,4 +38,3 @@ function find_rooms($in, $out, $guests)
         ];
     }
 }
-?>
