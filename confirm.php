@@ -54,12 +54,12 @@ if (!isset($_SESSION["user_id"])) {
                 <h2>Confirm your Reservation</h2>
             <?php } ?>
             <div class="container vertical">
-                <div>Number of Guests: <span><?php echo $_SESSION['room_choice']['guests']; ?></span></div>
-                <div>First Name: <span><?php echo $_SESSION['user_name']; ?></span></div>
-                <div>Check In: <span><?php echo $_SESSION['room_choice']['in']; ?></span></div>
-                <div>Check Out: <span><?php echo $_SESSION['room_choice']['out']; ?></span></div>
-                <div>Daily Rate: <span><?php echo $_SESSION['room_choice']['dailyRate']; ?></span></div>
-                <div>Total Price: <span><?php echo $_SESSION['room_choice']['total']; ?></span></div>
+                <div>Number of Guests: <span><?= $_SESSION['room_choice']['guests']; ?></span></div>
+                <div>First Name: <span><?= $_SESSION['user_name']; ?></span></div>
+                <div>Check In: <span><?= $_SESSION['room_choice']['in']; ?></span></div>
+                <div>Check Out: <span><?= $_SESSION['room_choice']['out']; ?></span></div>
+                <div>Daily Rate: <span><?= $_SESSION['room_choice']['dailyRate']; ?></span></div>
+                <div>Total Price: <span><?= $_SESSION['room_choice']['total']; ?></span></div>
             </div>
             <?php if (!isset($_SESSION['reservation'])) { ?>
                 <form id="reservation" method="POST" class="container vertical" action="functions/postreservation.php">

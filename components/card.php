@@ -6,13 +6,9 @@
         ?>" alt="A really nice hotel bedroom">
     </div>
     <div class="info container vertical">
-        <h2><?php echo $room['typeName'] ?></h2>
-        <div class="description">
-            <?php echo $room['description'] ?>
-        </div>
-        <div class="size">
-            Max: <?php echo $room['maxOccupancy'] ?> guests
-        </div>
+        <h2><?= $room['typeName'] ?></h2>
+        <div class="description"><?= $room['description'] ?></div>
+        <div class="size"> Max: <?= $room['maxOccupancy'] ?> guests </div>
         <div class="container horizontal">
             <ul class="tags container horizontal">
                 <?php
@@ -20,16 +16,16 @@
                 $tags = array_slice(explode(",", $room['amenities']), 5);
                 foreach ($tags as $item) {
                     ?>
-                    <li><?php echo trim($item) ?></li>
+                    <li><?= trim($item) ?></li>
                 <?php } ?>
             </ul>
             <div class="container vertical purchase">
-                <h4 class="price">$<?php echo $room['dailyRate'] ?>/night</h4>
+                <h4 class="price">$<?= $room['dailyRate'] ?>/night</h4>
                 <form class="roomForm" method="post" action="confirm.php">
                     <input type="hidden" name="checkin">
                     <input type="hidden" name="checkout">
                     <input type="hidden" name="guests">
-                    <input type="hidden" name="typeName" value="<?php echo htmlspecialchars($room['typeName']); ?>">
+                    <input type="hidden" name="typeName" value="<?= htmlspecialchars($room['typeName']); ?>">
                     <button type="submit" class="cta1">Book this room</button>
                 </form>
             </div>

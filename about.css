@@ -1,44 +1,44 @@
 /* ABOUT US PAGE STYLING */
 
 main .container {
-    background-color: var(--card);
-    padding: 40px;
-    border-radius: 34px;
-    box-shadow: 2px 9px 20px 2px var(--card-shadow);
-    max-width: 960px;
-    margin: 40px auto;
-    text-align: center;
-    flex-direction: column;
-    gap: 24px;
-  }
-  
-  main .container h1 {
-    font-size: 42pt;
-    font-family: "Alex Brush", cursive;
-    color: var(--accent4);
-    margin-bottom: 20px;
-  }
-  
-  main .container p {
-    font-size: 14pt;
-    line-height: 1.8;
-    color: var(--font-light);
-    text-align: justify;
-  }
+	background-color: var(--card);
+	padding: 40px;
+	border-radius: 34px;
+	box-shadow: 2px 9px 20px 2px var(--card-shadow);
+	max-width: 960px;
+	margin: 40px auto;
+	text-align: center;
+	flex-direction: column;
+	gap: 24px;
+}
+
+main .container h1 {
+	font-size: 42pt;
+	font-family: "Alex Brush", cursive;
+	color: var(--accent4);
+	margin-bottom: 20px;
+}
+
+main .container p {
+	font-size: 14pt;
+	line-height: 1.8;
+	color: var(--font-light);
+	text-align: justify;
+}
 
 
-  /* Media query for smaller screens */
-  @media (max-width: 768px) {
-    main .container {
-      padding: 24px;
-      margin: 20px;
-    }
-  
-    main .container h1 {
-      font-size: 32pt;
-    }
-  
-    main .container p {
-      font-size: 13pt;
-    }
-  }
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+	main .container {
+		padding: 24px;
+		margin: 20px;
+	}
+
+	main .container h1 {
+		font-size: 32pt;
+	}
+
+	main .container p {
+		font-size: 13pt;
+	}
+}
