@@ -27,8 +27,7 @@
             <div class="container vertical purchase">
                 <h4 class="price">Paid: $<?php echo number_format($res['amountPaid'], 2); ?></h4>
                 <div style="margin-top: auto;">
-                    <!-- No booking form needed for reservations -->
-                    <form method="post" action="cancel_reservation.php" onsubmit="return confirm('Are you sure you want to cancel this reservation?');">
+                    <form method="post" action="functions/cancelreservation.php" onsubmit="return confirm('Are you sure you want to cancel this reservation?');">
                         <input type="hidden" name="reservationID" value="<?php echo htmlspecialchars($res['reservationID']); ?>">
                         <button type="submit" class="cta1" style="background-color: crimson;">Cancel</button>
                     </form>
