@@ -2,7 +2,7 @@
     --font-cta: rgba(255, 255, 255, 0.85);
     --wave2: #80aab6;
     --wave3: #438599;
-    --transparent-card: rgba(255, 255, 255, 0.9);
+    --transparent-card: rgba(255, 255, 255, 0.2);
 }
 
 #hero {
@@ -30,7 +30,7 @@
         z-index: 1;
         font-size: 9dvw;
         font-family: "Cormorant Garamond", serif;
-        font-weight: 300;
+        font-weight: 800;
         color: var(--font-cta);
     }
 
@@ -40,7 +40,7 @@
 
     #spacer {
         z-index: 1;
-        height: 15dvh;
+        height: 15.5dvh;
     }
 }
 
@@ -58,7 +58,6 @@ header {
         height: 80%;
         aspect-ratio: 1;
         border-radius: 50%;
-        /* background: var(--card); */
     }
 
     span {
@@ -97,9 +96,32 @@ header #user {
     justify-content: center;
 
     #search {
-        padding: 12px 48px;
-        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        padding: 12px 24px;
+        border-radius: 64px;
         background: var(--transparent-card);
         max-width: 1000px;
+
+        input {
+            color: var(--font-cta);
+        }
+
+        label {
+            color: var(--font-cta);
+        }
+
+        .icon {
+            fill: var(--font-cta);
+            border-radius: 50%;
+            overflow: visible;
+            height: 40px;
+            aspect-ratio: 1;
+            width: auto;
+            padding: 8px;
+        }
+
+        .cta1 {
+            height: 40px;
+        }
     }
 }
