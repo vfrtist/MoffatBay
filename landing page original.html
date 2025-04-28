@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="main.css" />
     <!-- For all browsers -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/Logo 16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/Logo 32.png">
@@ -56,6 +56,7 @@
             <a id="login" href="login.php">Log In</a>
         </div>
     </header>
+
     <nav class="container horizontal">
         <a href="attractions.php">Attractions</a>
         <a href="search.php">Find Rooms</a>
@@ -63,6 +64,7 @@
         <a href="my_reservation.php">My Reservations</a>
         <a href="contact.php">Get in Touch</a>
     </nav>
+
     <form action="search.php" id="search" class="container horizontal">
         <fieldset class="container horizontal">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16">
@@ -89,7 +91,7 @@
             <div class="container vertical">
                 <label for="guests">GUESTS</label>
                 <div class="container horizontal" id="guestsWrapper">
-                    <button type="button" id="down" class="counter" disabled="true">-</button>
+                    <button type="button" id="down" class="counter">-</button>
                     <input type="text" name="guests" id="guests" value="2">
                     <button type="button" id="up" class="counter">+</butt>
                 </div>
@@ -99,108 +101,10 @@
     </form>
 
     <main>
-        <div class="card container horizontal card2">
-            <div class="imgWrapper">
-                <h2>Luxury King</h2>
-                <img src="images/Luxury King.jpg" alt="A really nice hotel bedroom">
-            </div>
-            <div class="info container vertical">
-                <div class="desciption">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, voluptatem? Nihil quod ex laudantium
-                    voluptatem quidem rem sit quaerat consectetur, odit aspernatur iure totam eveniet? Laboriosam
-                    aliquid eaque eveniet voluptatem.
-                    Iusto explicabo veniam vitae nesciunt assumenda illo cum obcaecati, cumque magni nobis sit sed
-                    possimus iure laudantium.
-                </div>
-                <div class="container horizontal">
-                    <ul class="tags container horizontal">
-                        <li>Big room</li>
-                        <li>Coffee station</li>
-                        <li>Complimentary Slippers</li>
-                        <li>Big room</li>
-                    </ul>
-                    <div class="container vertical purchase">
-                        <h4 class="price">$280/night</h4>
-                        <form class="roomForm" action="confirm_test.php">
-                            <input type="hidden" name="checkin">
-                            <input type="hidden" name="checkout">
-                            <input type="hidden" name="guests">
-                            <input type="hidden" name="typeName">
-                            <button type="submit" class="cta1">Book this room</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card container horizontal">
-            <div class="imgWrapper">
-                <img src="images/Luxury King.jpg" alt="A really nice hotel bedroom">
-            </div>
-            <div class="info container vertical">
-                <h2>Luxury King</h2>
-                <div class="desciption">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, voluptatem? Nihil quod ex laudantium
-                    voluptatem quidem rem sit quaerat consectetur, odit aspernatur iure totam eveniet? Laboriosam
-                    aliquid eaque eveniet voluptatem.
-                    Iusto explicabo veniam vitae nesciunt assumenda illo cum obcaecati, cumque magni nobis sit sed
-                    possimus iure laudantium.
-                </div>
-                <div class="container horizontal">
-                    <ul class="tags container horizontal">
-                        <li>Big room</li>
-                        <li>Coffee station</li>
-                        <li>Complimentary Slippers</li>
-                        <li>Big room</li>
-                    </ul>
-                    <div class="container vertical purchase">
-                        <h4 class="price">$280/night</h4>
-                        <form class="roomForm" action="confirm_test.php">
-                            <input type="hidden" name="checkin">
-                            <input type="hidden" name="checkout">
-                            <input type="hidden" name="guests">
-                            <input type="hidden" name="typeName">
-                            <button type="submit" class="cta1">Book this room</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card container horizontal">
-            <div class="imgWrapper">
-                <img src="images/Luxury King.jpg" alt="A really nice hotel bedroom">
-            </div>
-            <div class="info container vertical">
-                <h2>Luxury King</h2>
-                <div class="desciption">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, voluptatem? Nihil quod ex laudantium
-                    voluptatem quidem rem sit quaerat consectetur, odit aspernatur iure totam eveniet? Laboriosam
-                    aliquid eaque eveniet voluptatem.
-                    Iusto explicabo veniam vitae nesciunt assumenda illo cum obcaecati, cumque magni nobis sit sed
-                    possimus iure laudantium.
-                </div>
-                <div class="container horizontal">
-                    <ul class="tags container horizontal">
-                        <li>Big room</li>
-                        <li>Coffee station</li>
-                        <li>Complimentary Slippers</li>
-                        <li>Big room</li>
-                    </ul>
-                    <div class="container vertical purchase">
-                        <h4 class="price">$280/night</h4>
-                        <form class="roomForm" action="confirm_test.php">
-                            <input type="hidden" name="checkin">
-                            <input type="hidden" name="checkout">
-                            <input type="hidden" name="guests">
-                            <input type="hidden" name="typeName">
-                            <button type="submit" class="cta1">Book this room</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <figure class="container">
+            <img src="images/bart-ns4bIZ6XeGY-unsplash.jpg" alt=" A whale at sunset">
+            <figcaption>Experience the wonder</figcaption>
+        </figure>
     </main>
 
     <script src="color.js"></script>
