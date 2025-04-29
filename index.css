@@ -1,8 +1,6 @@
 :root {
     --font-cta: rgba(255, 255, 255, 0.85);
-    --wave2: #80aab6;
-    --wave3: #438599;
-    --transparent-card: rgba(255, 255, 255, 0.2);
+    --transparent-card: rgba(139, 139, 139, 0.2);
 }
 
 #hero {
@@ -40,7 +38,7 @@
 
     #spacer {
         z-index: 1;
-        height: 15.5dvh;
+        height: 20dvh;
     }
 }
 
@@ -49,38 +47,57 @@ header {
     border: none;
     padding-inline: 2dvw;
     z-index: 4;
-}
+    justify-content: space-between !important;
 
-#branding {
-    gap: 12px;
 
-    .logo {
-        height: 80%;
-        aspect-ratio: 1;
-        border-radius: 50%;
-    }
-
-    span {
+    :is(nav, #user) a {
+        font-size: 16pt !important;
+        font-weight: 500 !important;
         color: var(--font-cta);
-        translate: 0px 4px;
-        font-size: 40pt;
-    }
-}
-
-header #user {
-    :is(a, #login, #logout) {
-        color: var(--font-cta);
-        font-weight: 400;
-        background: none;
-        width: 86px;
+        border: none;
+        padding: 0px;
     }
 
-    :is(a, #logout, #login):hover {
-        background: var(--hover1);
+    #user {
+        :is(a, #login, #logout) {
+            color: var(--font-cta);
+            background: var(--transparent-card);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            width: 86px;
+        }
+
+        :is(a, #logout, #login):hover {
+            background: var(--hover1);
+        }
+
+        #join:hover {
+            color: var(--font-cta);
+        }
     }
 
-    #join:hover {
-        color: var(--font-cta);
+    nav {
+        z-index: 4;
+        position: relative;
+        width: 35dvw;
+        justify-content: space-between !important;
+    }
+
+    #branding {
+        gap: 12px;
+        margin: 0px;
+
+        .logo {
+            height: 80%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+
+        span {
+            color: var(--font-cta);
+            translate: 0px 4px;
+            font-size: 40pt;
+        }
     }
 }
 
@@ -96,6 +113,7 @@ header #user {
     justify-content: center;
 
     #search {
+        -webkit-backdrop-filter: blur(12px);
         backdrop-filter: blur(12px);
         padding: 12px 24px;
         border-radius: 64px;
@@ -104,6 +122,7 @@ header #user {
 
         input {
             color: var(--font-cta);
+            padding: 0px;
         }
 
         label {
@@ -122,6 +141,10 @@ header #user {
 
         .cta1 {
             height: 40px;
+        }
+
+        .counter {
+            color: var(--font-cta);
         }
     }
 }
