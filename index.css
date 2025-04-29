@@ -38,7 +38,7 @@
 
     #spacer {
         z-index: 1;
-        height: 20dvh;
+        height: 18.5dvh;
     }
 }
 
@@ -51,7 +51,7 @@ header {
 
 
     :is(nav, #user) a {
-        font-size: 16pt !important;
+        font-size: 14pt !important;
         font-weight: 500 !important;
         color: var(--font-cta);
         border: none;
