@@ -5,12 +5,14 @@
 	--accent4: #065f7c;
 	--accent5: #c0d9e1;
 	--base: #f9f5f0;
+	--base: #f5f1eb;
 	--card: white;
+	--transparent-card: rgba(139, 139, 139, 0.2);
 
 	--font-light: #756c5c;
 	--font-dark: #252423;
 	--transparent: #25242346;
-	--font-cta: white;
+	--font-cta: rgba(255, 255, 255, 0.85);
 	--font-accent: var(--accent4);
 
 	--hover1: hsl(31, 85%, 75%);
@@ -40,6 +42,7 @@
 	--card-shadow: #3f3e3d1a;
 }
 
+/* -------- Generic Stylings -------- */
 @font-face {
 	font-family: "Alex Brush";
 	font-style: normal;
@@ -84,6 +87,7 @@ button {
 	outline: none;
 }
 
+/* -------- Easy use classes -------- */
 .container {
 	display: flex;
 	justify-content: center;
@@ -125,6 +129,7 @@ button {
 	background: var(--hover3);
 }
 
+/* -------- Specific Stylings  -------- */
 body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 16pt;
@@ -156,83 +161,70 @@ body {
 header {
 	width: 100%;
 	height: 60px;
-	border-bottom: 2px solid var(--accent1);
-	justify-content: space-between;
-	position: sticky;
-	inset: 0;
-	background-color: var(--base);
-	padding-inline: 12dvw;
-	z-index: 1;
+	justify-content: space-between !important;
+	background: none;
+	padding-inline: 2dvw;
+	z-index: 4;
+	position: relative;
+
+	:is(nav, #user) :is(a, button) {
+		font-family: "Open Sans", sans-serif;
+		font-size: 12pt;
+		font-weight: 500;
+		color: var(--font-dark);
+		border: none;
+		padding: 0px;
+		margin: 0px;
+	}
 
 	#user {
 		gap: 12px;
 
 		:is(a, #login, #logout) {
+			background: var(--transparent-card);
 			border-radius: 18px;
 			padding: 8px;
 			text-align: center;
-			background: none;
-			border: none;
-			font-family: "Open Sans", sans-serif;
-			font-size: 12pt;
-			transition: background 0.2s, color 0.2s;
-			color: var(--font-dark);
-			font-weight: 300;
-		}
-
-		a:hover {
-			cursor: pointer;
-		}
-
-		:is(#login, #logout) {
-			background: var(--accent2);
+			transition: background 0.25s, color 0.25s;
+			-webkit-backdrop-filter: blur(12px);
+			backdrop-filter: blur(12px);
 			width: 86px;
 		}
 
-		:is(#logout, #login):hover {
+		:is(a, #logout, #login):hover {
 			background: var(--hover1);
-		}
-
-		#join:hover {
-			color: var(--accent1);
+			cursor: pointer;
 		}
 	}
-}
 
-#branding {
-	height: inherit;
-	margin-right: auto;
-
-	span {
-		font-family: "Alex Brush", serif;
-		font-size: 36pt;
-		color: var(--accent1);
-	}
-
-	.logo {
+	#branding {
 		height: inherit;
-	}
-}
+		margin: 0px;
+		gap: 12px;
 
-nav {
-	padding: 8px;
-	color: var(--font-light);
+		span {
+			font-family: "Alex Brush", serif;
+			font-size: 38pt;
+			color: var(--accent1);
+			translate: 0px 4px;
+		}
 
-	a {
-		border-inline: 1px solid var(--accent1);
-		padding: 0px 3%;
-	}
-
-	a:first-of-type {
-		border-left: none;
-	}
-
-	a:last-of-type {
-		border-right: none;
+		.logo {
+			height: 80%;
+			aspect-ratio: 1;
+			border-radius: 50%;
+		}
 	}
 
-	a:hover {
-		color: var(--accent1);
+	nav {
+		padding: 8px;
+		color: var(--font-light);
+		justify-content: space-between !important;
+		width: 40dvw;
+
+		a:hover {
+			color: var(--hover2) !important;
+		}
 	}
 }
 
@@ -241,134 +233,134 @@ main {
 	padding: 20px 12dvw;
 }
 
-#search {
-	width: 100%;
-	background: var(--card);
-	font-family: "Open Sans", sans-serif;
-	padding: 12px 12dvw;
-	justify-content: space-between;
-	position: sticky;
-	top: 0;
-	z-index: 2;
+#searchWrapper {
+	position: fixed;
+	bottom: 6dvh;
+	top: inherit;
+	left: 0;
+	height: fit-content;
+	padding-inline: 12dvw;
+	width: 100dvw;
+	display: flex;
+	justify-content: center;
+	z-index: 4;
 
-	fieldset {
-		border: none;
-		outline: none;
-		padding: 0;
-		margin: 0;
-		gap: 40px;
-		justify-content: flex-start;
-		flex-grow: 1;
-	}
-
-	fieldset:first-of-type {
-		flex-grow: 3;
-	}
-
-	div {
-		align-items: flex-start;
-	}
-
-	label {
-		color: var(--font-accent);
-		font-size: 11pt;
-		margin-bottom: 8px;
-		font-weight: 500;
-	}
-
-	input {
-		border: none;
-		background: none;
-		font-size: 16pt;
-		font-family: "Open Sans", sans-serif;
-		width: 12ch;
-		color: var(--font-dark);
-		padding: 4px 8px;
-		border-radius: 8px;
-		position: relative;
-		text-align: center;
-		font-weight: 100;
-	}
-
-	input[type="date"]::-webkit-calendar-picker-indicator {
-		inset: 0;
-		background: transparent;
-		color: transparent;
-		cursor: pointer;
-		height: auto;
-		position: absolute;
-		width: auto;
-	}
-
-	input:focus {
-		outline: 1px solid var(--accent4);
-	}
-
-	.icon {
-		fill: var(--accent4);
-		width: 24px;
-	}
-
-	.cta1 {
-		padding: 12px 24px;
-		width: auto;
-		-webkit-user-select: none;
-		user-select: none;
-	}
-
-	.counter {
-		font-size: 12pt;
-		cursor: pointer;
-		transition: color .2s, border .2s;
-		border: 1pt solid var(--disabled);
-		aspect-ratio: 1 / 1;
-		width: 24px;
-		border-radius: 50%;
-	}
-
-	.counter:hover {
-		border: 1pt solid var(--accent1);
-	}
-
-	.counter:disabled {
-		border: 1pt solid var(--disabled);
-		color: var(--disabled);
-		cursor: not-allowed;
-	}
-
-	#guests {
-		width: 2ch;
-		margin-inline: 8px;
-		padding: 0;
-	}
-
-	#guestsWrapper {
-		align-items: center;
-	}
-}
-
-figure {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	place-items: center;
-
-	img {
+	#search {
 		width: 100%;
-	}
+		max-width: 1000px;
+		padding: 12px 24px;
+		background: var(--card);
+		border-radius: 64px;
+		font-family: "Open Sans", sans-serif;
+		justify-content: space-between;
+		-webkit-backdrop-filter: blur(12px);
+		backdrop-filter: blur(12px);
+		box-shadow: 2px 9px 20px 2px var(--card-shadow);
 
-	figcaption {
-		font-family: "Cormorant Garamond", serif;
-		font-weight: 300;
-		font-size: 32pt;
-		position: absolute;
-		background: var(--transparent);
-		top: 20%;
-		color: var(--card);
-		padding: 45px 15%;
+		fieldset {
+			border: none;
+			outline: none;
+			padding: 0;
+			margin: 0;
+			gap: 40px;
+			justify-content: flex-start;
+			flex-grow: 1;
+		}
+
+		fieldset:first-of-type {
+			flex-grow: 3;
+		}
+
+		div {
+			align-items: flex-start;
+		}
+
+		label {
+			color: var(--font-dark);
+			font-size: 11pt;
+			margin-bottom: 8px;
+			font-weight: 500;
+		}
+
+		input {
+			border: none;
+			background: none;
+			font-size: 16pt;
+			font-family: "Open Sans", sans-serif;
+			width: 12ch;
+			color: var(--font-dark);
+			padding: 0px;
+			border-radius: 8px;
+			position: relative;
+			text-align: center;
+			font-weight: 100;
+		}
+
+		input[type="date"]::-webkit-calendar-picker-indicator {
+			inset: 0;
+			background: transparent;
+			color: transparent;
+			cursor: pointer;
+			height: auto;
+			position: absolute;
+			width: auto;
+		}
+
+		input:focus {
+			outline: 1px solid var(--accent4);
+		}
+
+		.icon {
+			fill: var(--font-dark);
+			border-radius: 50%;
+			overflow: visible;
+			height: 40px;
+			aspect-ratio: 1;
+			padding: 8px;
+		}
+
+		.cta1 {
+			padding: 12px 24px;
+			height: 40px;
+			width: auto;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+
+		.counter {
+			font-size: 12pt;
+			cursor: pointer;
+			transition: color .2s, border .2s;
+			border: 1pt solid var(--disabled);
+			aspect-ratio: 1 / 1;
+			width: 24px;
+			border-radius: 50%;
+			color: var(--font-dark);
+		}
+
+		.counter:hover {
+			border: 1pt solid var(--accent1);
+		}
+
+		.counter:disabled {
+			border: 1pt solid var(--disabled);
+			color: var(--disabled);
+			cursor: not-allowed;
+		}
+
+		#guests {
+			width: 2ch;
+			margin-inline: 8px;
+			padding: 0;
+		}
+
+		#guestsWrapper {
+			align-items: center;
+		}
 	}
 }
 
+/* -------- Main Grid  -------- */
 #grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -498,54 +490,12 @@ figure {
 	}
 }
 
+.card:last-of-type {
+	margin-bottom: 25dvh;
+}
+
 #reservation {
 	width: 100%;
 	display: flex;
 	gap: 16px !important;
-}
-
-
-[data-theme="dark"] {
-	header {
-		border-color: var(--accent2);
-	}
-
-	#branding span {
-		color: var(--accent2) !important;
-	}
-
-	.icon {
-		fill: var(--font-cta) !important;
-	}
-
-	nav a {
-		border-color: var(--accent2);
-	}
-
-	#login {
-		color: var(--base) !important;
-	}
-}
-
-.card2 {
-	.info {
-		padding: 16px;
-	}
-
-	.imgWrapper {
-		position: relative;
-		flex: 2;
-	}
-
-	h2 {
-		position: absolute;
-		bottom: 0;
-		padding: 52px 24px 16px;
-		font-weight: 600;
-		width: 100%;
-		background: linear-gradient(0deg, rgba(63, 62, 61, .35) 0%, rgba(255, 255, 255, 0) 100%);
-		backdrop-filter: blur(1px);
-		mask: linear-gradient(0deg, black 45%, transparent 100%);
-		color: var(--font-cta);
-	}
 }

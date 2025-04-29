@@ -69,9 +69,8 @@ if (!isset($_SESSION["user_id"])) {
             <?php } else {
                 // A reservation has been detected
                 unset($_SESSION['reservation']);
+                unset($_SESSION['room_choice']);
             } ?>
         </div>
-
-        <!-- if a reservation has not been decided -->
     </main>
 </body>

@@ -1,6 +1,14 @@
 <header class="container horizontal">
     <?php require 'components/branding.php' ?>
 
+    <nav class="container horizontal">
+        <a href="attractions.php">Attractions</a>
+        <a href="search.php">Find Rooms</a>
+        <a href="about.php">About Us</a>
+        <a href="my_reservation.php">My Reservations</a>
+        <a href="contact.php">Contact</a>
+    </nav>
+
     <div id="user" class="container horizontal">
         <?php
         if (isset($_SESSION["user_name"])) {
@@ -16,10 +24,3 @@
         <?php } ?>
     </div>
 </header>
-<nav class="container horizontal">
-    <a href="attractions.php">Attractions</a>
-    <a href="search.php">Find Rooms</a>
-    <a href="about.php">About Us</a>
-    <a href="my_reservation.php">My Reservations</a>
-    <a href="contact.php">Get in Touch</a>
-</nav>

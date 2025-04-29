@@ -1,6 +1,5 @@
 :root {
-    --font-cta: rgba(255, 255, 255, 0.85);
-    --transparent-card: rgba(139, 139, 139, 0.2);
+    --font-dark: rgba(255, 255, 255, 0.85);
 }
 
 #hero {
@@ -42,109 +41,10 @@
     }
 }
 
-header {
-    background: none;
-    border: none;
-    padding-inline: 2dvw;
-    z-index: 4;
-    justify-content: space-between !important;
-
-
-    :is(nav, #user) a {
-        font-size: 14pt !important;
-        font-weight: 500 !important;
-        color: var(--font-cta);
-        border: none;
-        padding: 0px;
-    }
-
-    #user {
-        :is(a, #login, #logout) {
-            color: var(--font-cta);
-            background: var(--transparent-card);
-            -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
-            width: 86px;
-        }
-
-        :is(a, #logout, #login):hover {
-            background: var(--hover1);
-        }
-
-        #join:hover {
-            color: var(--font-cta);
-        }
-    }
-
-    nav {
-        z-index: 4;
-        position: relative;
-        width: 35dvw;
-        justify-content: space-between !important;
-    }
-
-    #branding {
-        gap: 12px;
-        margin: 0px;
-
-        .logo {
-            height: 80%;
-            aspect-ratio: 1;
-            border-radius: 50%;
-        }
-
-        span {
-            color: var(--font-cta);
-            translate: 0px 4px;
-            font-size: 40pt;
-        }
-    }
+header #branding span {
+    color: var(--font-cta);
 }
 
-#searchWrapper {
-    position: absolute;
-    bottom: 6dvh;
-    top: inherit;
-    left: 0;
-    height: fit-content;
-    padding-inline: 12dvw;
-    width: 100dvw;
-    display: flex;
-    justify-content: center;
-
-    #search {
-        -webkit-backdrop-filter: blur(12px);
-        backdrop-filter: blur(12px);
-        padding: 12px 24px;
-        border-radius: 64px;
-        background: var(--transparent-card);
-        max-width: 1000px;
-
-        input {
-            color: var(--font-cta);
-            padding: 0px;
-        }
-
-        label {
-            color: var(--font-cta);
-        }
-
-        .icon {
-            fill: var(--font-cta);
-            border-radius: 50%;
-            overflow: visible;
-            height: 40px;
-            aspect-ratio: 1;
-            width: auto;
-            padding: 8px;
-        }
-
-        .cta1 {
-            height: 40px;
-        }
-
-        .counter {
-            color: var(--font-cta);
-        }
-    }
+#searchWrapper #search {
+    background: var(--transparent-card);
 }
