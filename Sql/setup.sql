@@ -38,6 +38,16 @@ CREATE TABLE Reservation (
     FOREIGN KEY (roomNumber) REFERENCES Room(roomNumber) ON DELETE CASCADE
 );
 
+-- Bookings Table 
+CREATE TABLE Bookings (
+    bookingID INT AUTO_INCREMENT PRIMARY KEY,
+    activity VARCHAR(50) NOT NULL,
+    user_id INT NOT NULL,
+    booking_time DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES User(userID) ON DELETE CASCADE
+);
+
+
 INSERT INTO User(firstName, lastName, email, password)
 VALUES (
         "Alan",

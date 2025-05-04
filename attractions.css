@@ -1,0 +1,193 @@
+:root {
+    --accent1: #d36c4c;
+    --accent2: #e7ae71;
+    --accent3: #fbef98;
+    --accent4: #065f7c;
+    --accent5: #c0d9e1;
+    --base: #f5f1eb;
+    --card: white;
+    --transparent-card: rgba(139, 139, 139, 0.2);
+
+    --font-light: #756c5c;
+    --font-dark: #252423;
+    --transparent: #25242346;
+    --font-cta: rgba(255, 255, 255, 0.85);
+    --font-accent: var(--accent4);
+
+    --hover1: hsl(31, 85%, 75%);
+    --hover2: hsl(195, 80%, 35%);
+    --hover3: hsl(195, 79%, 81%);
+
+    --disabled: #b7bbc8;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --base: #212427;
+    --card: #2c3035;
+
+    --font-light: #ebe3d7;
+    --font-dark: #fcf9f6;
+    --transparent: #25242346;
+    --font-cta: white;
+    --font-accent: var(--font-light);
+
+    --hover1: hsl(31, 85%, 75%);
+    --hover2: hsl(195, 80%, 35%);
+    --hover3: hsl(195, 79%, 81%);
+
+    --disabled: #b7bbc8;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+@font-face {
+    font-family: "Alex Brush";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Alex Brush"),
+        url("fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--base);
+    color: var(--font-dark);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--font-accent);
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--font-light);
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Attraction Grid */
+main.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Attraction Card */
+.attraction-card {
+    background-color: var(--card);
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attraction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 9px 20px 2px var(--card-shadow);
+}
+
+.attraction-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid var(--accent1);
+}
+
+.attraction-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.attraction-card h2 {
+    font-size: 2rem;
+    color: var(--accent4);
+}
+
+.attraction-card p {
+    font-size: 1rem;
+    color: var(--font-light);
+}
+
+/* Book Now Button */
+.book-button {
+    background-color: var(--accent1);
+    color: var(--font-cta);
+    padding: 0.75rem 2rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.book-button:hover {
+    background-color: var(--hover1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .attraction-card {
+        flex-direction: column;
+    }
+
+    .attraction-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .attraction-content {
+        padding: 1rem;
+    }
+}
+
+/*Confirmation Page*/
+
+.confirmation-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: var(--card);
+    box-shadow: 2px 9px 20px 2px var(--card-shadow);
+    border-radius: 1.5rem;
+    text-align: center;
+    color: var(--font-dark);
+}
+
+.confirmation-container h1 {
+    color: var(--accent4);
+    margin-bottom: 1rem;
+}
+
+.confirmation-container p {
+    font-size: 1.2rem;
+    color: var(--font-light);
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    display: inline-block;
+    background-color: var(--accent1);
+    color: var(--font-cta);
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: var(--hover1);
+}
