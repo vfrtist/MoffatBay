@@ -96,7 +96,7 @@ main.attractions-grid {
 
 .attraction-card:hover {
     transform: translateY(-5px);
-    box-shadow: rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 9px 20px 2px var(--card-shadow);
 }
 
 .attraction-card img {
@@ -152,4 +152,42 @@ main.attractions-grid {
     .attraction-content {
         padding: 1rem;
     }
+}
+
+/*Confirmation Page*/
+
+.confirmation-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: var(--card);
+    box-shadow: 0 4px 12px var(--card-shadow);
+    border-radius: 1.5rem;
+    text-align: center;
+    color: var(--font-dark);
+}
+
+.confirmation-container h1 {
+    color: var(--accent4);
+    margin-bottom: 1rem;
+}
+
+.confirmation-container p {
+    font-size: 1.2rem;
+    color: var(--font-light);
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    display: inline-block;
+    background-color: var(--accent1);
+    color: var(--font-cta);
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: var(--hover1);
 }

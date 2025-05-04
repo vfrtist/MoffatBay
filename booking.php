@@ -19,7 +19,7 @@ if (isset($_GET['activity'])) {
         $db = new Database();
 
         $userId = $_SESSION['user_id']; 
-        $bookingTime = date('Y-m-d H:i:s'); 
+        $bookingTime = date('Y-m-d H:i:s');
 
         // SQL query to insert a new booking
         $query = "INSERT INTO bookings (activity, user_id, booking_time) VALUES (?, ?, ?)";
