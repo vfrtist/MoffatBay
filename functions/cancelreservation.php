@@ -2,7 +2,8 @@
 // use this function to cancel a reservation on a user's 'my-reservation' page
 session_start();
 
-function cancelReservation($reservationID, $userID) {
+function cancelReservation($reservationID, $userID)
+{
     require_once '../config/db.php'; // get the database info
     $db = new Database(); // create a new database object
 
@@ -29,9 +30,3 @@ $success = cancelReservation($reservationID, $userID);
 // redirect the user back to "My Reservations" page
 header('Location: /MoffatBay/my_reservation.php');
 exit();
-?>
-
-
-
-
-

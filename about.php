@@ -52,5 +52,4 @@
 		</div>
 	</main>
 
-	<script src="search.js"></script>
 </body>
